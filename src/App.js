@@ -1,7 +1,8 @@
 import React from "react";
+import Routes from "./routes";
 
 const App = () => {
-  return <div>سیب</div>;
+  return <Routes />;
 };
 
 export default App;
