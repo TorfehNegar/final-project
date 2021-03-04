@@ -1,5 +1,5 @@
+/* eslint-disable */
 import axios from "axios";
-/* import { toast } from "react-toastify"; */
 
 axios.interceptors.response.use(null, (error) => {
   const expectedErrors =
@@ -7,10 +7,7 @@ axios.interceptors.response.use(null, (error) => {
     error.response.status >= 400 &&
     error.response.status < 500;
   if (!expectedErrors) {
-    /* toast.error("مشکلی از سمت سرور رخ داده است.", {
-      position: "top-right",
-      closeOnClick: true,
-    }); */
+    console.log("serve problem");
   }
   return Promise.reject(error);
 });
