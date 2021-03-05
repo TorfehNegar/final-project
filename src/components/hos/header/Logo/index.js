@@ -1,10 +1,11 @@
 import React from 'react';
 import Logo from '../../../../assets/img/logo.png';
+import "./Logo.scss";
 
 function TorfehNegarLogo() {
   return (
-    <div>
-      <img className="logo" src={Logo}/>
+    <div className="logo">
+      <img src={Logo}/>
     </div>
   );
 }
