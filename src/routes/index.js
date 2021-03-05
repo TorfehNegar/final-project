@@ -5,13 +5,6 @@ import MainLayout from "../components/hos";
 
 const Routes = () => {
   return (
-<<<<<<< HEAD
-    <MainLayout>
-      <Switch>
-        <Route exact path="/"  />
-      </Switch>
-    </MainLayout>
-=======
     <Router>
       <Route 
         exact path="/" 
@@ -21,7 +14,6 @@ const Routes = () => {
         </MainLayout>
       </Route>
     </Router>
->>>>>>> 55b0d359240e3269d81d732581534c4d42114e61
   );
 };
 
