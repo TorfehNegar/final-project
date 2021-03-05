@@ -6,7 +6,7 @@ const Routes = () => {
   return (
     <MainLayout>
       <Switch>
-        <Route exact path="/" render={() => (<h2>طرفه نگار</h2>)} />
+        <Route exact path="/"  />
       </Switch>
     </MainLayout>
   );
