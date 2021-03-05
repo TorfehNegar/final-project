@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as Heart } from '../../../../assets/svg/heart.svg';
-import './Favorite.scss'
+import './Favorite.scss';
 
 function Favorite() {
   return (
