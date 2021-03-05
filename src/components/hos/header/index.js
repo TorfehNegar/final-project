@@ -7,7 +7,7 @@ import TorfehNegarLogo from './Logo/index'
 const Header = () => {
     return (
         <div>
-            <div className="container">
+            <div className="Header__container">
                 <TorfehNegarLogo/>
             </div>
         </div>
