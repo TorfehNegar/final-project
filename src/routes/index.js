@@ -1,14 +1,19 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Route ,   BrowserRouter as Router, } from "react-router-dom";
 import MainLayout from "../components/hos";
+
 
 const Routes = () => {
   return (
-    <MainLayout>
-      <Switch>
-        <Route exact path="/" render={() => (<h2>طرفه نگار</h2>)} />
-      </Switch>
-    </MainLayout>
+    <Router>
+      <Route 
+        exact path="/" 
+      >
+        <MainLayout>
+          <h2>طرفه نگار</h2>
+        </MainLayout>
+      </Route>
+    </Router>
   );
 };
 
