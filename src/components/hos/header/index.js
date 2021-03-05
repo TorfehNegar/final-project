@@ -4,6 +4,7 @@ import "./header.scss"
 import TorfehNegarLogo from './Logo/index'
 import NavBar from './NavBar/index'
 import Favorite from './Favorite/index'
+import Name from './Name/index'
 
 const Header = () => {
     return (
@@ -12,6 +13,7 @@ const Header = () => {
                 <TorfehNegarLogo/>
                 <NavBar/>
                 <Favorite/>
+                <Name/>
             </div>
         </div>
     )
