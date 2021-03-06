@@ -1,15 +1,17 @@
 import React from 'react';
-import socialMedia from './socialMedia/index';
+import Socialmedia from './socialMedia/index';
 import Logo from './Logo/index';
 import Description from './Description/index';
+import './Footer.scss';
 
-function Footer() {
-    return (
-        <div className="fooetr">
-            
-            
-        </div>
-    )
-}
+const Footer = () => {
+  return (
+    <div className="fooeter__container">
+      <Socialmedia/>
+      <Logo/>
+      <Description/>
+    </div>
+  );
+};
 
 export default Footer;
