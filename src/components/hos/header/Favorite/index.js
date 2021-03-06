@@ -1,12 +1,11 @@
 import React from 'react';
-import { ReactComponent as Heart } from '../../../../assets/svg/heart.svg';
+// import { ReactComponent as Heart } from '../../../../assets/svg/heart.svg';
 import './Favorite.scss';
 
 function Favorite() {
   return (
     <div className="favorite">
-      <p> 2 </p>
-      <a> <Heart/> </a>
+      <p> <button> <span className="favorite__box"> 2 </span> </button> </p>
     </div>
   );
 }
