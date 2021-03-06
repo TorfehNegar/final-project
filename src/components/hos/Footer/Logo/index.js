@@ -1,11 +1,12 @@
 import React from 'react';
+import Logo from '../../../../assets/img/logo.png';
 
-const Logo = () => {
+const TorfehLogo = () => {
   return (
     <div>
-            
+      <img src={Logo}/>     
     </div>
   );
 };
 
-export default Logo;
+export default TorfehLogo;
