@@ -1,12 +1,14 @@
 import { createStore, applyMiddleware, compose } from "redux";
-import { personsReducer } from "../reducers/reducer";
+import {rootReducer} from './reducers';
 import thunk from "redux-thunk";
+import { getAllPersons } from "./action/fetchDataAction";
+
 
 export const store = createStore(
-  personsReducer,
+  rootReducer,
   compose(
     applyMiddleware(thunk),
   )
 );
 
-//subscribe
+store.dispatch(getAllPersons());
