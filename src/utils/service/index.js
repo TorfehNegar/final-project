@@ -1,6 +1,11 @@
 import http from "../Api";
 import config from "../config/config.json";
 
-export const getAllPeoples = () => {
-  return http.get(`${config.swapiapi}/people/`);
+export const getPaginationPeoples = async pageNumber => {
+  try{
+    const res = await http.get(`${config.swapiapi}/people${pageNumber?"/"+ pageNumber:""}`);
+    return res;
+  } catch(err) {
+    throw err;
+  }
 };

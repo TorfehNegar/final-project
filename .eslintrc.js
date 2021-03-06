@@ -23,6 +23,6 @@ module.exports = {
     "semi": "warn",
     "no-unused-vars": "error",
     "require-await" : "error",
-    "no-return-await" : "error"
+    "no-useless-catch": "off"
   }
-}
+};
