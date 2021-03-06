@@ -8,8 +8,8 @@ const Footer = () => {
   return (
     <div className="fooeter__container">
       <TorfehLogo/>
-      <Socialmedia/>
       <Description/>
+      <Socialmedia/>
     </div>
   );
 };
