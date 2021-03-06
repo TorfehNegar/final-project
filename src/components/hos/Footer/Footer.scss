@@ -1,0 +1,22 @@
+$background-color: #cfcfcf;
+$color: #fff;
+
+.fooeter__container {
+    width: 90%;
+    background-color: $background-color;
+    margin: {
+        top: 0px;
+        bottom: 0px;
+        right: auto;
+        left: auto;
+    }
+    display: grid;
+    grid-template-columns: 2fr 5fr 2fr;
+    padding: {
+        top: .5rem;
+        right: 1.5rem;
+        bottom: .5rem;
+        left: .5rem;
+    };
+        
+}
