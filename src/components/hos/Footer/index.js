@@ -3,14 +3,22 @@ import Socialmedia from './socialMedia/index';
 import TorfehLogo from './Logo/index';
 import Description from './Description/index';
 import './Footer.scss';
+import CopyRight from './copyright/index';
 
 const Footer = () => {
   return (
-    <div className="fooeter__container">
-      <TorfehLogo/>
-      <Description/>
-      <Socialmedia/>
+    <div>
+      <div className="fooeter">
+        <TorfehLogo/>
+        <Description/>
+        <Socialmedia/>
+      </div>
+      <div className="footer__copyright">
+        <CopyRight/>
+      </div>
+
     </div>
+    
   );
 };
 
