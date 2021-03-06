@@ -1,7 +1,7 @@
 $background-color: #cfcfcf;
 $color: #fff;
 
-.fooeter__container {
+.fooeter {
     width: 90%;
     background-color: $background-color;
     margin: {
@@ -13,10 +13,19 @@ $color: #fff;
     display: grid;
     grid-template-columns: 2fr 5fr 2fr;
     padding: {
-        top: .5rem;
+        top: 1rem;
         right: 1.5rem;
         bottom: .5rem;
         left: .5rem;
     };
         
+}
+
+.footer__copyright {
+    background-color: #b8b8b8;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 4fr;
+    height: 3rem;
+    margin: 0 auto;
 }
