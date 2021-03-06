@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+import Footer from "./Footer/index";
 
 const MainLayout = ({ children }) => {
   return (
@@ -9,6 +10,7 @@ const MainLayout = ({ children }) => {
           <div className="peoples">{children}</div>
         </div>
       </main>
+      <Footer/>
     </Fragment>
   );
 };
