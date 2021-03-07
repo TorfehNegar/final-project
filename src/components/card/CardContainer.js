@@ -16,7 +16,7 @@ const CardContainer = () => {
   return (
     <div>
       {/* use map method here */}
-      <div>
+      <div className="card-container">
         <CardImage isFavorite={people.isFavorite} like={() => like(people.id,people.isFavorite)} id={people.id} /> {/* shows the picture of the people */}
         <CardText people={people} /> {/* shows people's name and gender */}
       </div>
