@@ -1,4 +1,5 @@
 import React from "react";
+import CardText from "./contentBox";
 
 const CardContainer = () => {
   return (
@@ -9,7 +10,7 @@ const CardContainer = () => {
             image goes here
         </div>
         <div className="text">
-            people info goes here
+          <CardText /> {/* shows people's name and gender */}
         </div>
       </div>
     </div>
