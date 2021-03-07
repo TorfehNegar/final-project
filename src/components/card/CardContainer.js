@@ -1,6 +1,6 @@
 import React from "react";
 import CardText from "./contentBox";
-import CardImage from "./shadowBox/main";
+import CardImage from "./imageBox/CardImage";
 
 const CardContainer = () => {
   return (
