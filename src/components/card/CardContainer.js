@@ -1,5 +1,6 @@
 import React from "react";
 import CardText from "./contentBox";
+import CardImage from "./shadowBox/main";
 
 const CardContainer = () => {
   return (
@@ -7,7 +8,7 @@ const CardContainer = () => {
       {/* use map method here */}
       <div>
         <div className="image">
-            image goes here
+          <CardImage />
         </div>
         <div className="text">
           <CardText /> {/* shows people's name and gender */}
