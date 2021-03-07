@@ -2,7 +2,7 @@ import React from "react";
 
 const ShareButton = () => {
   return (
-    <button style={{background: "none"}}>
+    <button className="action-button">
       <img
         src="https://img.icons8.com/bubbles/50/4a90e2/share.png"
         alt="share"
