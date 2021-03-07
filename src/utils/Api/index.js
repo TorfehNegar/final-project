@@ -1,4 +1,3 @@
-/* eslint-disable */
 import axios from "axios";
 
 axios.interceptors.response.use(null, (error) => {
@@ -7,7 +6,7 @@ axios.interceptors.response.use(null, (error) => {
     error.response.status >= 400 &&
     error.response.status < 500;
   if (!expectedErrors) {
-    console.log("serve problem");
+    throw new Error("server problem");
   }
   return Promise.reject(error);
 });
