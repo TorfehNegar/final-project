@@ -7,12 +7,8 @@ const CardContainer = () => {
     <div>
       {/* use map method here */}
       <div>
-        <div className="image">
-          <CardImage />
-        </div>
-        <div className="text">
-          <CardText /> {/* shows people's name and gender */}
-        </div>
+        <CardImage /> {/* shows the picture of the people */}
+        <CardText /> {/* shows people's name and gender */}
       </div>
     </div>
   );
