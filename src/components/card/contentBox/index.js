@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from "react";
+import PropTypes from 'prop-types';
+
 
 const CardText = ({people}) => {
   return (
@@ -8,6 +9,10 @@ const CardText = ({people}) => {
       <p>{people.gender}</p>
     </div>
   );
+};
+
+CardText.propTypes = {
+  people: PropTypes.object
 };
 
 export default CardText;
