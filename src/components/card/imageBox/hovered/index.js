@@ -1,9 +1,11 @@
 import React from "react";
+import FavoriteButton from "./favorite/FavoriteButton";
 
 const CardActions = () => {
   return (
     <div>
-        add to / remove from favorites button and share button go here
+      <FavoriteButton />
+      {/*share component goes here*/}
     </div>
   );
 };
