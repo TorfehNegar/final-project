@@ -1,12 +1,13 @@
 import React from "react";
 import FavoriteButton from "./favorite/FavoriteButton";
 import PropTypes from 'prop-types';
+import ShareButton from "./share/ShareButton";
 
 const CardActions = ({like, isFavorite, id}) => {
   return (
     <div>
       <FavoriteButton like={like} isFavorite={isFavorite} id={id} />
-      {/*share component goes here*/}
+      <ShareButton />
     </div>
   );
 };
