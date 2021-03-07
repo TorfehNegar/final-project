@@ -1,3 +1,7 @@
+.flexy {
+  display: flex;
+}
+
 .card-container {
   display: flex;
   align-items: center;
@@ -15,4 +19,22 @@
     #a2bac9,
     #e3f7ff
   );
+}
+
+.card-image {
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image {
+  img {
+    width: 100%;
+  }
+}
+
+.card-image {
+  &:hover .card-actions {
+    transform: translateY(0);
+  }
 }
