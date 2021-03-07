@@ -1,16 +1,26 @@
-/* eslint-disable */
-import {GET_ALL} from "../types/type";
-import {INITIALSTATS} from "../states";
+import {GET_PAGINATION_PEOPLES,CHANGE_FAVORITE} from "../types/type";
 
-export const personsReducer = (state = INITIALSTATS, action) => {
+
+export const peoplesReducer = (state=[], action) => {
   switch (action.type) {
-  case GET_ALL:
-    state=[...action.payload];
-    state.map((item, i) => {
-      item.id = i + 1;
-      item.isFavorite= false;
+  case GET_PAGINATION_PEOPLES:
+    return [...state,...action.payload].map((item, i) => {
+      return {
+        ...item,
+        isFavorite:false,
+        id:i+1
+      };
     });
-    return state; 
+  case CHANGE_FAVORITE:
+    return state.map((item)=>{
+      if (action.payload.id===item.id){
+        return {
+          ...item,
+          isFavorite:action.payload.isFavorite
+        };
+      }
+    });
+    
   default:
     return state;
   }

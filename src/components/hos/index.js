@@ -1,10 +1,8 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-//import {useSelector} from  "react-redux";
+
 
 const MainLayout = ({ children }) => {
-  /*const state = useSelector(state => state.peoples)
-  console.log(state)*/
   return (
     <Fragment>
       <main>

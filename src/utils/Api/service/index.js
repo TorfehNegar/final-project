@@ -1,4 +1,4 @@
-import http from "../Api";
+import http from "..";
 import config from "../config/config.json";
 
 export const getPaginationPeoples = async pageNumber => {
