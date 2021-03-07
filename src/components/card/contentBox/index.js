@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const CardText = ({people}) => {
   return (
-    <div>
+    <div className="card-text">
       <h1>{people.name}</h1>
       <p>{people.gender}</p>
     </div>

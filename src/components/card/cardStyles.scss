@@ -38,3 +38,11 @@
     transform: translateY(0);
   }
 }
+
+.text {
+  width: 350px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  color: rgb(231, 208, 165);
+}
