@@ -39,6 +39,10 @@
   }
 }
 
+.starwars-image {
+  object-fit: fill;
+}
+
 .text {
   width: 350px;
   display: flex;
