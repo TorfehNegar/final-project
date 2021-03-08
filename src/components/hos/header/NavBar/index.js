@@ -1,6 +1,6 @@
 import React from 'react';
 import "./NavBar.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -8,10 +8,10 @@ function NavBar() {
       <nav className="navbar__nav">
         <ul>
           <li>
-            <Link to='/favorites'> favorites </Link>
+            <NavLink exact to='/' activeStyle={{color:'green'}}> Home </NavLink>
           </li>
           <li>
-            <a> home </a>
+            <NavLink to='/favorites' activeStyle={{color:'green'}}> Favorites </NavLink>
           </li>
           <li>
             <a> home </a>

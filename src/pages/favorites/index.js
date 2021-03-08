@@ -28,7 +28,7 @@ const Favorites=()=>{
       {favoritePeoples.length===0?
         <div className='message'>
           <p >
-           :) There is not favorite
+            .There is not favorite
           </p>
         </div>:
         favoritePeoples.map((people) =>
