@@ -8,11 +8,11 @@ const FavoriteButton = ({like, isFavorite, id}) => {
       { 
         isFavorite ? 
           <img 
-            src="https://img.icons8.com/fluent/25/000000/star.png" 
+            src="https://img.icons8.com/fluent/40/000000/star.png" 
             alt="add to favs" 
           /> : 
           <img 
-            src="https://img.icons8.com/color/25/000000/star--v1.png" 
+            src="https://img.icons8.com/color/40/000000/star--v1.png" 
             alt="remove from favs" 
           /> 
       }
