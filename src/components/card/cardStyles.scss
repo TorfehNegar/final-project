@@ -10,24 +10,15 @@
 }
 
 .card-image {
-  width: 10rem;
+  width: 100%;
   position: relative;
   overflow: hidden;
   img {
     width: 100%;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
   }
-}
-
-.card-image {
   &:hover .card-actions {
     transform: translateY(0);
   }
-}
-
-.starwars-image {
-  object-fit: fill;
 }
 
 .card-text {
