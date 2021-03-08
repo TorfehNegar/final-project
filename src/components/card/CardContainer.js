@@ -18,12 +18,10 @@ import "./cardStyles.scss";
 
 const CardContainer = ({people,like}) => {
   return (
-    <div>
       <div key={people.id} className="card-container">
         <CardImage isFavorite={people.isFavorite} like={like} id={people.id} /> {/* shows the picture of the people */}
         <CardText people={people} /> 
       </div>
-    </div>
   );
 };
 
