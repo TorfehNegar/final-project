@@ -3,23 +3,10 @@
 }
 
 .card-container {
-  display: flex;
-  align-items: center;
-  max-width: 500px;
-  height: 91px;
-  // margin-right: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  -webkit-box-shadow: -2px 10px 29px -3px rgba(0, 0, 0, 0.33);
-  box-shadow: -2px 10px 29px -3px rgba(0, 0, 0, 0.33);
-  background-image: linear-gradient(
-    to right top,
-    #051937,
-    #344a66,
-    #678096,
-    #a2bac9,
-    #e3f7ff
-  );
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
 }
 
 .card-image {
