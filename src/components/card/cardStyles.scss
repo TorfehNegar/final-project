@@ -86,17 +86,3 @@
   background: none;
   width: 25px;
 }
-@media (max-width: 768px) {
-  .card-container{
-      width:calc(100% - 10px);
-      max-width: 400px;
-      margin: 10px auto;
-      }
-}
-@media (min-width: 768px) and (max-width:1200px){
-
- .card-container{
-      width:calc(50% - 20px);
-      max-width: 500px;
-      }
-}

@@ -5,7 +5,6 @@ import './hoc.scss';
 
 
 import Footer from "./Footer/index";
-
 const MainLayout = ({ children }) => {
   return (
     <Fragment>
