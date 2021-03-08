@@ -15,7 +15,7 @@ const MainLayout = ({ children }) => {
           <div className="peoples">{children}</div>
         </div>
       </main>
-      <Footer/>stat
+      <Footer/>
     </Fragment>
   );
 };
