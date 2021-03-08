@@ -1,0 +1,24 @@
+.footer__social__media {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    a {
+        cursor: pointer;
+    }
+    .facebook {
+        width: 2rem;
+        height: 10rem;
+    }
+    .instagram {
+        width: 2rem;
+        height: 10rem;
+    }
+    .telegram {
+        width: 2rem;
+        height: 10rem;
+    }
+    .youtube {
+        width: 2rem;
+        height: 10rem;
+    }
+}
