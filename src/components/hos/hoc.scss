@@ -1,14 +1,6 @@
 .container{
     max-width:1280px;
+    min-height: 100vh;
     margin: 0 auto;
 }
 
-.peoples{
-    width: 100%;
-    min-height: calc(100vh - 338px);
-    padding:50px 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;    
-}
