@@ -1,5 +1,6 @@
 import React from 'react';
 import "./NavBar.scss";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -7,7 +8,7 @@ function NavBar() {
       <nav className="navbar__nav">
         <ul>
           <li>
-            <a> home </a>
+            <Link to='/favorites'> favorites </Link>
           </li>
           <li>
             <a> home </a>
