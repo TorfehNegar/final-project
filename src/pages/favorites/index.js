@@ -26,17 +26,27 @@ const Favorites=()=>{
   return(
     <MainLayout>
       {favoritePeoples.length===0?
-        <div className='message'>
-          <p >
+        <div className='messageContainer'>
+          <div className='messageText'>
+            <p >
             .There is not favorite
-          </p>
-        </div>:
-        favoritePeoples.map((people) =>
-          <CardContainer
-            key={people.id} 
-            people={people} 
-            like={()=>like(people.id,people.isFavorite)}
-          />)} 
+            </p>
+          </div> 
+        </div>
+        :
+        <div>
+          <div className='search'>search</div>
+          <div className='favoriteContainer'>
+            { favoritePeoples.map((people) =>
+              <CardContainer
+                key={people.id} 
+                people={people} 
+                like={()=>like(people.id,people.isFavorite)}
+              />)}
+          </div>
+        </div>
+      }
+
     </MainLayout>
   );
 };

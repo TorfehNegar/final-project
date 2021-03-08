@@ -5,14 +5,13 @@ import './hoc.scss';
 
 
 import Footer from "./Footer/index";
-
 const MainLayout = ({ children }) => {
   return (
     <Fragment>
       <Header />
       <main>
         <div className="container">
-          <div className="peoples">{children}</div>
+          {children}
         </div>
       </main>
       <Footer/>

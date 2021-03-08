@@ -3,6 +3,7 @@ import {useSelector,useDispatch} from 'react-redux';
 import MainLayout from '../../components/hos';
 import CardContainer from '../../components/card/CardContainer';
 import {changeFavorite} from '../../redux/people/action/fetchDataAction';
+import './peoples.scss';
 const Peoples=()=>{
   const peoples=useSelector(state=>state.peoples);
   const dispatch = useDispatch();
@@ -13,12 +14,14 @@ const Peoples=()=>{
 
   return(
     <MainLayout>
-      {peoples.map((people) =>
-        <CardContainer
-          key={people.id} 
-          people={people} 
-          like={()=>like(people.id,people.isFavorite)}
-        />)}      
+      <div className='peoplesContainer'>
+        {peoples.map((people) =>
+          <CardContainer
+            key={people.id} 
+            people={people} 
+            like={()=>like(people.id,people.isFavorite)}
+          />)}
+      </div>
     </MainLayout>
   );
 };
