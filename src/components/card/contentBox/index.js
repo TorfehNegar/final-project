@@ -1,14 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { Link } from "react-router-dom";
-
 
 const CardText = ({people}) => {
   return (
     <div className="card-text">
-      <Link className="people-link" to={{pathname:"/people/" + people.id}}>
-        <h3>{people.name}</h3>
-      </Link>
+      <h3>{people.name}</h3>
       <p>{people.gender}</p>
     </div>
   );
