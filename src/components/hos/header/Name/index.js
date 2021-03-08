@@ -4,7 +4,7 @@ import './Name.scss';
 function Name() {
   return (
     <div className="name">
-      <h1> myGroupName</h1>
+      <h1> Torfehnegar is loading</h1>
     </div>
   );
 }
