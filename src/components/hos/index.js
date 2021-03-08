@@ -12,7 +12,7 @@ const MainLayout = ({ children }) => {
       <Header />
       <main>
         <div className="container">
-          <div className="peoples">{children}</div>
+          {children}
         </div>
       </main>
       <Footer/>
