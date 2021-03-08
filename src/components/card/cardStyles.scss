@@ -22,12 +22,9 @@
 }
 
 .card-text {
-  width: 250px;
   display: flex;
   flex-flow: column;
   align-items: center;
-  color: rgb(231, 208, 165);
-
   .people-link {
     text-decoration: none;
     &:visited {
