@@ -1,6 +1,6 @@
 import React from "react";
 import { Route ,   BrowserRouter as Router, } from "react-router-dom";
-import MainLayout from "../components/hos";
+import Peoples from "../pages/peoples";
 
 
 const Routes = () => {
@@ -9,9 +9,7 @@ const Routes = () => {
       <Route 
         exact path="/" 
       >
-        <MainLayout>
-          <h2>طرفه نگار</h2>
-        </MainLayout>
+        <Peoples/>
       </Route>
     </Router>
   );
