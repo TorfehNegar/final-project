@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 
-const CardText = ({people, pageId}) => {
+const CardText = ({people}) => {
   return (
     <div className="card-text">
-      <Link to={{pathname:"/people/" + people.id, pageId: pageId}}>
+      <Link to={{pathname:"/people/" + people.id}}>
         <h1>{people.name}</h1>
       </Link>
       <p>جنسیت:{people.gender}</p>
@@ -16,8 +16,7 @@ const CardText = ({people, pageId}) => {
 };
 
 CardText.propTypes = {
-  people: PropTypes.object,
-  pageId: PropTypes.number
+  people: PropTypes.object
 };
 
 export default CardText;
