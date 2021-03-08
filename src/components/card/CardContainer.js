@@ -1,6 +1,7 @@
 import React from "react";
 import CardText from "./contentBox";
 import CardImage from "./imageBox/CardImage";
+import CardButton from "./cardButton";
 import PropTypes from 'prop-types';
 import "./cardStyles.scss";
 
@@ -15,6 +16,7 @@ const CardContainer = ({people, like}) => {
       <CardText 
         people={people} 
       />
+      <CardButton />
     </div>
   );
 };
