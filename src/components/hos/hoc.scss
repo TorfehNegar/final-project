@@ -5,6 +5,7 @@
 
 .peoples{
     width: 100%;
+    min-height: calc(100vh - 338px);
     padding:50px 10px;
     display: flex;
     flex-direction: row;
