@@ -25,15 +25,11 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  .people-link {
-    text-decoration: none;
-    &:visited {
-      color: rgb(231, 208, 165);
-    }
-
-    h3 {
-      font-size: 1.25rem;
-    }
+  h3 {
+    font-size: 1.25rem;
+  }
+  p {
+    color: rgb(112, 112, 112);
   }
 }
 
