@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
+/*eslint-disable */
 import React from "react";
 import CardText from "./contentBox";
 import CardImage from "./imageBox/CardImage";
@@ -15,17 +16,13 @@ import "./cardStyles.scss";
     to get the id and isFavorite property of the liked card
 */
 
-const CardContainer = () => {
+const CardContainer = ({people,like}) => {
   return (
     <div>
-      {/* use map method here */}
-      {peoples.length !==0 ?
-        peoples.map((people) => (
-          <div key={people.id} className="card-container">
-            <CardImage isFavorite={people.isFavorite} like={() => like(people.id,people.isFavorite)} id={people.id} /> {/* shows the picture of the people */}
-            <CardText people={people} /> {/* shows people's name and gender */}
-          </div>
-        )) : <h1>در حال بارگذاری...</h1>}
+      <div key={people.id} className="card-container">
+        <CardImage isFavorite={people.isFavorite} like={like} id={people.id} /> {/* shows the picture of the people */}
+        <CardText people={people} /> 
+      </div>
     </div>
   );
 };
