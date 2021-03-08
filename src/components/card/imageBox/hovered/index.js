@@ -6,7 +6,10 @@ import ShareButton from "./share/ShareButton";
 const CardActions = ({like, isFavorite, id}) => {
   return (
     <div className="card-actions">
-      <FavoriteButton like={like} isFavorite={isFavorite} id={id} />
+      <FavoriteButton 
+        like={like} 
+        isFavorite={isFavorite} 
+        id={id} />
       <ShareButton />
     </div>
   );

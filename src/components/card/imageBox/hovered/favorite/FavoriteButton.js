@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 const FavoriteButton = ({like, isFavorite, id}) => {
 
   return (
-    <button className="action-button" onClick={(isFavorite) => like(id,isFavorite)}>
+    <button 
+      className="action-button" 
+      onClick={(isFavorite) => like(id,isFavorite)}>
       { 
         isFavorite ? 
           <img 

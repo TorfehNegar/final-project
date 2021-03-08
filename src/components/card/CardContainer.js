@@ -16,7 +16,8 @@ const CardContainer = ({people, like}) => {
       <CardText 
         people={people} 
       />
-      <CardButton people={people} />
+      <CardButton 
+        people={people} />
     </div>
   );
 };
