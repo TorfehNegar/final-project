@@ -1,14 +1,13 @@
-/* eslint-disable no-undef */
 import React from "react";
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 
-const CardText = ({people, pageId}) => {
+const CardText = ({people}) => {
   return (
     <div className="card-text">
-      <Link to={{pathname:"/people/" + people.id, pageId: pageId}}>
-        <h1>{people.name}</h1>
+      <Link className="people-link" to={{pathname:"/people/" + people.id}}>
+        <h3>{people.name}</h3>
       </Link>
       <p>{people.gender}</p>
     </div>
@@ -16,8 +15,7 @@ const CardText = ({people, pageId}) => {
 };
 
 CardText.propTypes = {
-  people: PropTypes.object,
-  pageId: PropTypes.number
+  people: PropTypes.object
 };
 
 export default CardText;

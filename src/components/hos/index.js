@@ -4,6 +4,7 @@ import Header from "./header";
 import './hoc.scss';
 
 
+import Footer from "./Footer/index";
 
 const MainLayout = ({ children }) => {
   return (
@@ -14,6 +15,7 @@ const MainLayout = ({ children }) => {
           <div className="peoples">{children}</div>
         </div>
       </main>
+      <Footer/>stat
     </Fragment>
   );
 };
