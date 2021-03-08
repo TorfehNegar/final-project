@@ -1,9 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const CardButton = () => {
+const CardButton = ({people}) => {
   return (
-    <button className="link-button">More info</button>
+    <Link className="people-link" to={{pathname:"/people/" + people.id}}>
+      <button className="link-button">More info</button>
+    </Link>
   );
+};
+
+CardButton.propTypes = {
+  people: PropTypes.object
 };
 
 export default CardButton;
