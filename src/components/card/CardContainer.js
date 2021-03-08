@@ -1,7 +1,10 @@
+/* eslint-disable no-console */
 /* eslint-disable no-undef */
 import React from "react";
 import CardText from "./contentBox";
 import CardImage from "./imageBox/CardImage";
+import "./cardStyles.scss";
+
 
 /*
  **** requirements **** 
@@ -16,10 +19,13 @@ const CardContainer = () => {
   return (
     <div>
       {/* use map method here */}
-      <div className="card-container">
-        <CardImage isFavorite={people.isFavorite} like={() => like(people.id,people.isFavorite)} id={people.id} /> {/* shows the picture of the people */}
-        <CardText people={people} /> {/* shows people's name and gender */}
-      </div>
+      {peoples.length !==0 ?
+        peoples.map((people) => (
+          <div key={people.id} className="card-container">
+            <CardImage isFavorite={people.isFavorite} like={() => like(people.id,people.isFavorite)} id={people.id} /> {/* shows the picture of the people */}
+            <CardText people={people} /> {/* shows people's name and gender */}
+          </div>
+        )) : <h1>در حال بارگذاری...</h1>}
     </div>
   );
 };

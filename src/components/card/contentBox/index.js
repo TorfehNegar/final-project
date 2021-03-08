@@ -10,7 +10,7 @@ const CardText = ({people, pageId}) => {
       <Link to={{pathname:"/people/" + people.id, pageId: pageId}}>
         <h1>{people.name}</h1>
       </Link>
-      <p>{people.gender}</p>
+      <p>جنسیت:{people.gender}</p>
     </div>
   );
 };
