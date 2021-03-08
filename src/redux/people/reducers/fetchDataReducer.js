@@ -16,9 +16,9 @@ export const peoplesReducer = (state=[], action) => {
       if (action.payload.id===item.id){
         return {
           ...item,
-          isFavorite:action.payload.isFavorite
+          isFavorite:!action.payload.isFavorite
         };
-      }
+      }else{return item;}
     });
     
   default:

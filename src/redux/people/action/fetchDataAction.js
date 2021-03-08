@@ -9,9 +9,12 @@ export const getAllPeoples = () => {
 };
 
 
-export const changeFavorite =  (data) => {
+export const changeFavorite =  (id,isFavorite) => {
   return {
     type: CHANGE_FAVORITE,
-    payload: data
+    payload: {
+      id,
+      isFavorite
+    }
   };
 };
