@@ -7,7 +7,6 @@ const CardText = ({people}) => {
       <h3>{people.name}</h3>
       <p><b>gender: </b>{people.gender}</p>
       <p><b>birth: </b>{people.birth_year}</p>
-      <p><b>birth: </b>{people.birth_year}</p>
     </div>
   );
 };
