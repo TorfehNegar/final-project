@@ -8,7 +8,7 @@ const CardText = ({people}) => {
   return (
     <div className="card-text">
       <Link to={{pathname:"/people/" + people.id}}>
-        <h1>{people.name}</h1>
+        <h3>{people.name}</h3>
       </Link>
       <p>جنسیت:{people.gender}</p>
     </div>
