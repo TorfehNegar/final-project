@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React , {useState, useEffect, useCallback} from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import {changeFavorite} from '../../redux/people/action/fetchDataAction';
@@ -10,6 +11,9 @@ const Favorites=()=>{
   const [users, setUsers] = useState([]);
   const [displayPeoples, setDisplayPeoples] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [start, setStart] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+
 
   const peoples=useSelector(state=>state.peoples);
 
@@ -30,9 +34,16 @@ const Favorites=()=>{
 
 
   useEffect(()=>{
-    if (users.length===0 &&  favoritePeoples.length>0) {
-      setUsers(favoritePeoples);
-      setDisplayPeoples(favoritePeoples);
+    if (favoritePeoples.length===0) setErrorMessage('there is not favorite');
+    if (users.length===0 && favoritePeoples.length>0) {
+      setErrorMessage('')
+      if (!start) {
+        setStart(true)
+        setUsers(favoritePeoples);
+        setDisplayPeoples(favoritePeoples);
+      }else {
+        setErrorMessage('موردی یافت نشد')
+      }
     }
     else if (favoritePeoples.length<users.length){
       setUsers(favoritePeoples);
@@ -42,7 +53,10 @@ const Favorites=()=>{
 
   const filterArray=(input)=> {
     setLoading(false);
-    if (input === '') setUsers(displayPeoples);
+    if (input === '') {
+      setUsers(displayPeoples);
+      setErrorMessage('');
+    }
     else setUsers(users.filter(people => people.name.toLowerCase().includes(input)));
   };
   const debounce = (fn,delay) => {
@@ -66,9 +80,7 @@ const Favorites=()=>{
       {favoritePeoples.length===0?
         <div className='messageContainer'>
           <div className='messageText'>
-            <p >
-            .There is not favorite
-            </p>
+            <p>{errorMessage}</p>
           </div> 
         </div>
         :
@@ -79,17 +91,18 @@ const Favorites=()=>{
             <div className="search"></div>
             {loading === true &&
             <div id="load" className="search-bar-loading">
-              <div>G</div>
-              <div>N</div>
-              <div>I</div>
-              <div>D</div>
-              <div>A</div>
-              <div>O</div>
-              <div>L</div>
+              <div>G</div><div>N</div><div>I</div><div>D</div><div>A</div><div>O</div><div>L</div>
             </div>
             }
           </div>
           <div className='favoriteContainer'>
+            {errorMessage!=='' &&  /*when search result is null==> error: there is no result */
+            <div className='messageContainer'>
+              <div className='messageText'>
+                <p>{errorMessage}</p>
+              </div>
+            </div>
+            }
             { users.map((people) =>
               <CardContainer
                 key={people.id}
@@ -99,7 +112,6 @@ const Favorites=()=>{
           </div>
         </div>
       }
-
     </MainLayout>
   );
 };
