@@ -1,0 +1,29 @@
+div.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: visibility 0s, opacity 0.2s ease-in-out;
+}
+.modal__active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal__deactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+div.modal__container {
+  background-color: #fff;
+  width: 40vw;
+  height: 30%;
+  padding: 1.5rem;
+  border-radius: 2rem;
+}
