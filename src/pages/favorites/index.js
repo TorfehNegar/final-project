@@ -9,6 +9,7 @@ const Favorites=()=>{
 
   const [users, setUsers] = useState([]);
   const [displayPeoples, setDisplayPeoples] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const peoples=useSelector(state=>state.peoples);
 
@@ -40,6 +41,7 @@ const Favorites=()=>{
   },[favoritePeoples,peoples]);
 
   const filterArray=(input)=> {
+    setLoading(false);
     if (input === '') setUsers(displayPeoples);
     else setUsers(users.filter(people => people.name.toLowerCase().includes(input)));
   };
@@ -48,6 +50,7 @@ const Favorites=()=>{
     return args => {
       clearTimeout(inDebounce);
       inDebounce = setTimeout(() => fn(args), delay);
+      setLoading(true);
     };
   };
 
@@ -74,6 +77,17 @@ const Favorites=()=>{
             <input className="search-input" type="text" placeholder="جستجو کنید..."
               onChange={event => handleChange(event)}/>
             <div className="search"></div>
+            {loading === true &&
+            <div id="load" className="search-bar-loading">
+              <div>G</div>
+              <div>N</div>
+              <div>I</div>
+              <div>D</div>
+              <div>A</div>
+              <div>O</div>
+              <div>L</div>
+            </div>
+            }
           </div>
           <div className='favoriteContainer'>
             { users.map((people) =>
