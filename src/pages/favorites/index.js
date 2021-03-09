@@ -86,7 +86,7 @@ const Favorites=()=>{
   const debouncedSave = useCallback(debounce((input)=>filterArray(input), 5000),[users]);
 
   const handleChange = (event) => {
-    let input = event.target.value.toLowerCase();
+    let input = event.target.value.toLowerCase().trim();
     debouncedSave(input);
   };
 
