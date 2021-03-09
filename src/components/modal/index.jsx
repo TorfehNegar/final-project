@@ -1,22 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "./modal.scss";
+import { ReactComponent as Telegram } from "../../assets/img/029-telegram.svg";
+import { ReactComponent as Twitter } from "../../assets/img/043-twitter.svg";
+import { ReactComponent as WhatsApp } from "../../assets/img/035-whatsapp.svg";
+import { ReactComponent as FaceBook } from "../../assets/img/021-facebook.svg";
+import { ReactComponent as Pin } from "../../assets/img/041-pinterest.svg";
 const Modal = ({ isOpen, setIsOpen }) => {
-  const [text, setText] = useState("");
   const closeModal = (e) => {
     e.stopPropagation();
     setIsOpen(false);
   };
 
-  const twitterLink =
-    "https://twitter.com/intent/tweet/?text=" + encodeURIComponent();
-  const whatsAppLink =
-    "https://api.whatsapp.com/send?text=" + encodeURIComponent();
-  const telegramLink = "https://telegram.me/share?url=" + encodeURIComponent();
-  const pinit =
-    "http://pinterest.com/pin/create/link/?url=" + encodeURIComponent();
-  const fb =
-    "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent();
+  const links = {
+    tw: "https://twitter.com/intent/tweet/?text=",
+    tg: "https://telegram.me/share?url=",
+    wp: "https://api.whatsapp.com/send?text=",
+    pin: "http://pinterest.com/pin/create/link/?url=",
+    fb: "https://www.facebook.com/sharer/sharer.php?u=",
+  };
+  const generateLink = (url) => {
+    return url + encodeURIComponent("TorfeNegar Developers Group");
+  };
+
   return (
     <>
       <div
@@ -24,59 +30,35 @@ const Modal = ({ isOpen, setIsOpen }) => {
         onClick={closeModal}
       >
         <div className="modal__container">
+          <h2>با دوستان خود به اشتراک بگذارید</h2>
+
           <div className="social-icons">
-            <h2>اشتراک گذاری در شبکه های اجتماعی</h2>
-            <input
-              onChange={(e) => {
-                setText(e.target.value);
-                // console.log(text);
+            <Telegram
+              onClick={() => {
+                window.open(generateLink(links.tg));
               }}
-              type="text"
-              name=""
-              id=""
-              value={text}
+            />
+            <Pin
+              onClick={() => {
+                window.open(generateLink(links.pin));
+              }}
+            />
+            <Twitter
+              onClick={() => {
+                window.open(generateLink(links.tw));
+              }}
+            />
+            <WhatsApp
+              onClick={() => {
+                window.open(generateLink(links.wp));
+              }}
+            />
+            <FaceBook
+              onClick={() => {
+                window.open(generateLink(links.fb));
+              }}
             />
           </div>
-          <button
-            onClick={() => {
-              window.open(twitterLink);
-            }}
-            className="share"
-          >
-            share to twitter
-          </button>
-          <button
-            onClick={() => {
-              window.open(whatsAppLink);
-            }}
-            className="share"
-          >
-            share to whats App
-          </button>
-          <button
-            onClick={() => {
-              window.open(telegramLink);
-            }}
-            className="share"
-          >
-            share to telegram
-          </button>
-          <button
-            onClick={() => {
-              window.open(pinit);
-            }}
-            className="share"
-          >
-            pinit
-          </button>
-          <button
-            onClick={() => {
-              window.open(fb);
-            }}
-            className="share"
-          >
-            FaceBook
-          </button>
         </div>
       </div>
     </>
