@@ -2,7 +2,7 @@ import React from "react";
 import CardActions from "./hovered";
 import PropTypes from 'prop-types';
 
-const CardImage = ({like, isFavorite, id}) => {
+const CardImage = ({like, isFavorite, id ,setIsOpen}) => {
   return (
     <div className="card-image">
       <img 
@@ -11,7 +11,10 @@ const CardImage = ({like, isFavorite, id}) => {
       <CardActions 
         isFavorite={isFavorite} 
         like={like} 
-        id={id} />
+        id={id}
+        setIsOpen={setIsOpen}
+      />
+      
     </div>
   );
 };
@@ -19,7 +22,8 @@ const CardImage = ({like, isFavorite, id}) => {
 CardImage.propTypes = {
   like: PropTypes.func,
   isFavorite: PropTypes.bool,
-  id: PropTypes.number
+  id: PropTypes.number,
+  setIsOpen:PropTypes.func
 };
 
 export default CardImage;
