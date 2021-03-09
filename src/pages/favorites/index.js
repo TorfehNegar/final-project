@@ -70,7 +70,7 @@ const Favorites=()=>{
         </div>
         :
         <div>
-          <div className='search'>
+          <div className='search-bar'>
             <input className="search-input" type="text" placeholder="جستجو کنید..."
               onChange={event => handleChange(event)}/>
           </div>

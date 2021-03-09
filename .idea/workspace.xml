@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e232279a-7b76-4a3c-b84d-37d778b12178" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/pages/favorites/favorites.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/favorites/favorites.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/favorites/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/favorites/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,6 +80,12 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/card/CardContainer.js</url>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pages/favorites/index.js</url>
+          <line>79</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
