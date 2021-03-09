@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState, useEffect, useCallback} from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import {changeFavorite} from '../../redux/people/action/fetchDataAction';
 import CardContainer from '../../components/card/CardContainer';
@@ -6,10 +6,14 @@ import MainLayout from '../../components/hos';
 import './favorites.scss';
 
 const Favorites=()=>{
+
+  const [users, setUsers] = useState([]);
+  const [displayPeoples, setDisplayPeoples] = useState([]);
+
   const peoples=useSelector(state=>state.peoples);
 
   const favoritePeoples = peoples.filter(people =>{
-    if(people.isFavorite==true){
+    if(people.isFavorite===true){
       return people;
     }
     else{
@@ -21,6 +25,37 @@ const Favorites=()=>{
 
   const like=(ID,ISFAVORITE)=>{  
     dispatch(changeFavorite(ID,ISFAVORITE));
+  };
+
+
+  useEffect(()=>{
+    if (users.length===0 &&  favoritePeoples.length>0) {
+      setUsers(favoritePeoples);
+      setDisplayPeoples(favoritePeoples);
+    }
+    else if (favoritePeoples.length<users.length){
+      setUsers(favoritePeoples);
+      setDisplayPeoples(favoritePeoples);
+    }
+  },[favoritePeoples,peoples]);
+
+  const filterArray=(input)=> {
+    if (input === '') setUsers(displayPeoples);
+    else setUsers(users.filter(people => people.name.toLowerCase().includes(input)));
+  };
+  const debounce = (fn,delay) => {
+    let inDebounce = null;
+    return args => {
+      clearTimeout(inDebounce);
+      inDebounce = setTimeout(() => fn(args), delay);
+    };
+  };
+
+  const debouncedSave = useCallback(debounce((input)=>filterArray(input), 5000),[users]);
+
+  const handleChange = (event) => {
+    let input = event.target.value.toLowerCase();
+    debouncedSave(input);
   };
 
   return(
@@ -35,12 +70,15 @@ const Favorites=()=>{
         </div>
         :
         <div>
-          <div className='search'>search</div>
+          <div className='search'>
+            <input className="search-input" type="text" placeholder="جستجو کنید..."
+              onChange={event => handleChange(event)}/>
+          </div>
           <div className='favoriteContainer'>
-            { favoritePeoples.map((people) =>
+            { users.map((people) =>
               <CardContainer
-                key={people.id} 
-                people={people} 
+                key={people.id}
+                people={people}
                 like={()=>like(people.id,people.isFavorite)}
               />)}
           </div>
