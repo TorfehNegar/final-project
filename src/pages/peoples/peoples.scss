@@ -1,8 +1,28 @@
-.peoplesContainer{
-    width: 100%;
-    padding:50px 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;    
+.peoplesContainer {
+  width: 100%;
+  padding: 50px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .peoplesContainer {
+    justify-content: center;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 600px) {
+  .peoplesContainer {
+    justify-content: center;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .peoplesContainer {
+    justify-content: flex-start;
+  }
 }
