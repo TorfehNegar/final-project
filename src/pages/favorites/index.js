@@ -55,16 +55,16 @@ const Favorites=()=>{
     }
   },[favoritePeoples,peoples]);
 
-  function objectsAreSame(x, y) {
-    var objectsAreSame = true;
-    for(var propertyName in x) {
+  const objectsAreSame = (x, y) =>{
+    let objectsAreSame = true;
+    for(let propertyName in x) {
       if(x[propertyName] !== y[propertyName]) {
         objectsAreSame = false;
         break;
       }
     }
     return objectsAreSame;
-  }
+  };
   
   const filterArray=(input)=> { /* filtering name users with search input */
     setLoading(false);
