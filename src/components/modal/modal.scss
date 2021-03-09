@@ -27,3 +27,14 @@ div.modal__container {
   padding: 1.5rem;
   border-radius: 2rem;
 }
+div.social-icons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+  svg {
+  }
+  h2 {
+    flex-basis: 100%;
+  }
+}
