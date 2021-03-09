@@ -73,6 +73,7 @@ const Favorites=()=>{
           <div className='search-bar'>
             <input className="search-input" type="text" placeholder="جستجو کنید..."
               onChange={event => handleChange(event)}/>
+            <div className="search"></div>
           </div>
           <div className='favoriteContainer'>
             { users.map((people) =>
