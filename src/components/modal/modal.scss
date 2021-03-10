@@ -10,6 +10,22 @@ div.modal {
   align-items: center;
 
   transition: visibility 0s, opacity 0.2s ease-in-out;
+  div.modal__container {
+    background-color: #fff;
+    width: 40vw;
+    height: 30%;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    div.social-icons {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 2rem;
+      h2 {
+        flex-basis: 100%;
+      }
+    }
+  }
 }
 .modal__active {
   visibility: visible;
@@ -18,23 +34,4 @@ div.modal {
 .modal__deactive {
   visibility: hidden;
   opacity: 0;
-}
-
-div.modal__container {
-  background-color: #fff;
-  width: 40vw;
-  height: 30%;
-  padding: 1.5rem;
-  border-radius: 2rem;
-}
-div.social-icons {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 2rem;
-  svg {
-  }
-  h2 {
-    flex-basis: 100%;
-  }
 }
