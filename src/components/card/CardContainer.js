@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import CardText from "./contentBox";
 import CardImage from "./imageBox/CardImage";
 import CardButton from "./cardButton";
 import PropTypes from 'prop-types';
 import "./cardStyles.scss";
+import Modal from "./modal";
 
-const CardContainer = ({people, like,setIsOpen}) => {
+const CardContainer = ({ people, like }) => {
+  const [isOpen,setIsOpen]=useState(false);
   return (
     <div className="card-container">
       <CardImage 
@@ -19,7 +21,8 @@ const CardContainer = ({people, like,setIsOpen}) => {
         people={people} 
       />
       <CardButton 
-        people={people}  />
+        people={people} />
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} people={people}  />
     </div>
   );
 };
@@ -27,7 +30,6 @@ const CardContainer = ({people, like,setIsOpen}) => {
 CardContainer.propTypes = {
   people: PropTypes.object,
   like: PropTypes.func,
-  // isOpen: PropTypes.bool,
   setIsOpen: PropTypes.func
 };
 
