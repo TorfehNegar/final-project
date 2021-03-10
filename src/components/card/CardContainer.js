@@ -7,7 +7,7 @@ import "./cardStyles.scss";
 import Modal from "./modal";
 
 const CardContainer = ({ people, like }) => {
-  const [isOpen,setIsOpen]=useState(true);
+  const [isOpen,setIsOpen]=useState(false);
   return (
     <div className="card-container">
       <CardImage 

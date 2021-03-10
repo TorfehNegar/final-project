@@ -1,0 +1,40 @@
+.header__nav {
+    background-color: rgba(0,0,0,.8);
+    width: 33%; 
+    height: 100vh;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    right: 0;
+    .switch {
+        font-size: 1.5rem;
+        color: #fff;
+        position: absolute;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        top: 2rem;
+        left: 0;
+        cursor: pointer;
+    }
+    
+    .navbar__side {
+        position: fixed;
+        padding: {
+            top: 6rem;
+            right: 4rem;
+            left: 0;
+            bottom: 0;
+        };
+        ul {
+            list-style: none;
+            li {
+                margin-bottom: 2rem;
+                .link {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
