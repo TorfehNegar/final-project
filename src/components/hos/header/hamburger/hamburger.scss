@@ -1,21 +1,29 @@
-.header__hamburger {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    
-    .hamburger__icon {
-        width: 2.4rem;
-        height: .5rem;
-        background-color: #222;
-        margin: {
-            top: 0;
-            right: 0;
-            left: 0;
-            bottom: .3rem;
+@media only screen and (min-width : 320px) {
+    .header__hamburger {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        
+        .hamburger__icon {
+            width: 2.4rem;
+            height: .5rem;
+            background-color: #222;
+            margin: {
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: .3rem;
+            }
+        
+            border-radius: 1rem;
         }
-    
-        border-radius: 1rem;
-    }
+    }    
 }
 
+@media only screen and (min-width : 768px) {
+    .header__hamburger {
+        display: none;
+    }
+}

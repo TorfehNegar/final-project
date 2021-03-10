@@ -1,16 +1,14 @@
+/* eslint-disable */
 import React from 'react';
 import "./sideNav.scss";
 import { NavLink } from "react-router-dom";
 
-
-function SideNav() {
+function SideNav({getShow ,toggleShow}) { 
   return (
-    <div className="header__nav">
-      <button className="toggle__btn"> 
-        <div className="toggle__icon"></div>
-        <div className="toggle__icon"></div>
-        <div className="toggle__icon"></div>
-      </button>
+    <div className="header__nav"  style={getShow ? {width : 0} : {width:" 30%"}}>
+      <div className="switch" onClick={()=>toggleShow(!getShow)}>
+        X
+      </div>
       <nav className="navbar__side">
         <ul>
           <li>
