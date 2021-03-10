@@ -1,0 +1,46 @@
+div.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: visibility 0s, opacity 0.2s ease-in-out;
+
+  div.modal__container {
+    background-color: #fff;
+    width: 60vw;
+    height: auto;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    div.social-icons {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 2rem;
+      * {
+        margin: auto 0.7rem;
+      }
+    }
+  }
+}
+.modal__active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal__deactive {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media (min-width: 300px) and (max-width: 368) {
+  div.social-icons {
+    padding: 0.7rem;
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+}
