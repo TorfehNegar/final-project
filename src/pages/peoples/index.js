@@ -1,12 +1,15 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import MainLayout from '../../components/hos';
 import CardContainer from '../../components/card/CardContainer';
 import {changeFavorite} from '../../redux/people/action/fetchDataAction';
 import './peoples.scss';
+import Modal from '../../components/modal';
 const Peoples=()=>{
   const peoples=useSelector(state=>state.peoples);
   const dispatch = useDispatch();
+
+  const [isOpen,setIsOpen]=useState(false);
 
   const like=(ID,ISFAVORITE)=>{  
     dispatch(changeFavorite(ID,ISFAVORITE));
@@ -19,8 +22,11 @@ const Peoples=()=>{
           <CardContainer
             key={people.id} 
             people={people} 
-            like={()=>like(people.id,people.isFavorite)}
+            like={() => like(people.id, people.isFavorite)}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
           />)}
+        <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </MainLayout>
   );
