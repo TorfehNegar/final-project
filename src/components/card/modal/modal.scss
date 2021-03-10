@@ -9,6 +9,7 @@ div.modal {
   justify-content: center;
   align-items: center;
   transition: visibility 0s, opacity 0.2s ease-in-out;
+  z-index: 1000;
 
   div.modal__container {
     background-color: #fff;
@@ -16,6 +17,7 @@ div.modal {
     height: auto;
     padding: 1.5rem;
     border-radius: 2rem;
+    position: relative;
     div.social-icons {
       display: flex;
       justify-content: space-evenly;
