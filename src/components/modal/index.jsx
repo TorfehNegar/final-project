@@ -29,7 +29,12 @@ const Modal = ({ isOpen, setIsOpen }) => {
         className={isOpen ? "modal modal__active" : "modal modal__deactive"}
         onClick={closeModal}
       >
-        <div className="modal__container">
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          className="modal__container"
+        >
           <h2>با دوستان خود به اشتراک بگذارید</h2>
 
           <div className="social-icons">
