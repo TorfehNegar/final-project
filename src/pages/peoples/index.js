@@ -14,7 +14,9 @@ const Peoples=()=>{
 
   return(
     <MainLayout>
+      
       <div className='peoplesContainer'>
+        
         {peoples.map((people) =>
           <CardContainer
             key={people.id} 
@@ -22,6 +24,7 @@ const Peoples=()=>{
             like={()=>like(people.id,people.isFavorite)}
           />)}
       </div>
+   
     </MainLayout>
   );
 };
