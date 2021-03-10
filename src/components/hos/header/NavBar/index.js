@@ -14,10 +14,7 @@ function NavBar() {
             <NavLink to='/favorites' activeStyle={{color:'green'}}> Favorites </NavLink>
           </li>
           <li>
-            <a> home </a>
-          </li>
-          <li>
-            <a> home </a>
+            <a> page </a>
           </li>
         </ul>
       </nav>

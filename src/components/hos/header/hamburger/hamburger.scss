@@ -1,0 +1,21 @@
+.header__hamburger {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    
+    .hamburger__icon {
+        width: 2.4rem;
+        height: .5rem;
+        background-color: #222;
+        margin: {
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: .3rem;
+        }
+    
+        border-radius: 1rem;
+    }
+}
+
