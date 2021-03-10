@@ -2,13 +2,15 @@ import React from 'react';
 import "./sideNav.scss";
 import { NavLink } from "react-router-dom";
 
+
 function SideNav() {
   return (
     <div className="header__nav">
-      <label className="switch">
-        <input type="checkbox" />
-        <span className="slider round"> </span>
-      </label>
+      <button className="toggle__btn"> 
+        <div className="toggle__icon"></div>
+        <div className="toggle__icon"></div>
+        <div className="toggle__icon"></div>
+      </button>
       <nav className="navbar__side">
         <ul>
           <li>
