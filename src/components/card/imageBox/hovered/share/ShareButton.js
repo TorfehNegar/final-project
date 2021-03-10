@@ -15,6 +15,6 @@ const ShareButton = ({setIsOpen}) => {
 };
 
 ShareButton.propTypes = {
-  setIsOpen : PropTypes.func
-}
+  setIsOpen: PropTypes.func
+};
 export default ShareButton;
