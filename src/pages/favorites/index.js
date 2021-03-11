@@ -21,7 +21,7 @@ const Favorites=()=>{
     }
     else{
       return null;
-    }} 
+    }}
   );
   
   const dispatch = useDispatch();
@@ -36,16 +36,15 @@ const Favorites=()=>{
     prevFavRef.current = favoritePeoples;
   });
   const prevFav = prevFavRef.current;
-  /***/
 
   //*** set component is mounted or not ***//
   const unMounted=useRef(false);
   useEffect(() => {
     return ()=> {unMounted.current = true;};
   },[]);
-  /***/
 
   useEffect(()=>{
+    setErrorMessage('');
     if (favoritePeoples.length===0) setErrorMessage('there is not favorite'); //when we have not any favorites.
     if (users.length===0 && favoritePeoples.length>0) { //when users is empty but favorite peoples are full
       setErrorMessage('');
@@ -76,11 +75,9 @@ const Favorites=()=>{
   const filterArray=(input)=> { /* filtering name users with search input */
     if (!unMounted.current) { /* if component is mounted then filter*/
       setLoading(false);
-      if (input === '') { /* if client erase all input values=> show all favorite peoples */
-        setUsers(favoritePeoples);
-        setErrorMessage('');
-      }
-      else setUsers(users.filter(people => people.name.toLowerCase().includes(input)));
+      /* if client erase all input values=> show all favorite peoples */
+      if (input === '') setUsers(favoritePeoples);
+      else setUsers(favoritePeoples.filter(people => people.name.toLowerCase().includes(input)));
     }
   };
 
