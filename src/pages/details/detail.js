@@ -1,35 +1,35 @@
-import React, { useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
-import "./style.scss"
-import MainLayout from "../../components/hos"
-import { useSelector } from "react-redux"
-import axios from "axios"
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import "./style.scss";
+import MainLayout from "../../components/hos";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 
 function Detail() {
-  const history = useHistory()
-  const [item, setItem] = useState([])
+  const history = useHistory();
+  const [item, setItem] = useState([]);
   useEffect(() => {
-    fetchItem()
-  }, [])
+    fetchItem();
+  }, []);
 
   const fetchItem = async () => {
-    const id = history.location.pathname.split("/")[2]
-    const {data} = await axios.get(`https://swapi.dev/api/people/${id}/`)
-    setItem(data)
-  }
+    const id = history.location.pathname.split("/")[2];
+    const {data} = await axios.get(`https://swapi.dev/api/people/${id}/`);
+    setItem(data);
+  };
 
-  const peoples = useSelector(state => state.peoples)
+  const peoples = useSelector(state => state.peoples);
   var fav;
   peoples.filter(people => {
     if (people.isFavorite === true) {
       if (people.id == history.location.pathname.split("/")[2]) {
-        fav = "Favorite"
+        fav = "Favorite";
       }
     } else {
-      return null
+      return null;
     }
-  })
+  });
 
   return (
     <>
@@ -57,6 +57,6 @@ function Detail() {
         </main>
       </MainLayout>
     </>
-  )
+  );
 }
-export default Detail
+export default Detail;
