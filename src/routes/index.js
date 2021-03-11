@@ -17,7 +17,7 @@ const Routes = () => {
       <Route path='/favorites'>
         <Favorites/>
       </Route>
-    	<Route path="/people/:id" component={People} />
+      <Route path="/people/:id" component={People} />
     </Router>
   );
 };
