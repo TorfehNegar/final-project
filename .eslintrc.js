@@ -1,8 +1,13 @@
-module.exports = {
+var config = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    node:true,
   },
+  settings: {
+    "react": {
+      "version": "16.8.2"
+    }},
   extends: [
     "eslint:recommended",
     "plugin:react/recommended"
@@ -26,3 +31,4 @@ module.exports = {
     "no-useless-catch": "off"
   }
 };
+module.exports = config;
