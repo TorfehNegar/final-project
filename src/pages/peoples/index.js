@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import MainLayout from '../../components/hos';
 import CardContainer from '../../components/card/CardContainer';
@@ -14,6 +14,10 @@ const Peoples=()=>{
   const like=(ID,ISFAVORITE)=>{  
     dispatch(changeFavorite(ID,ISFAVORITE));
   };
+  // tracking on which page we currently are
+  const [page, setPage] = useState(2);
+  // add loader refrence 
+  const loader = useRef(null);
 
   return(
     <MainLayout>
@@ -28,6 +32,17 @@ const Peoples=()=>{
           />)}
         <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
+       {/*<!-- Add Ref to Load More div -->*/}
+       {
+        page<=9 ? 
+          <div 
+            className="loading" 
+            ref={loader}>
+            <h2>Load More</h2>
+          </div> 
+          : 
+          <></> 
+      }
     </MainLayout>
   );
 };
