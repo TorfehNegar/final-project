@@ -2,7 +2,7 @@ import React from "react";
 import { Route ,   BrowserRouter as Router, } from "react-router-dom";
 import Peoples from "../pages/peoples";
 import Favorites from "../pages/favorites";
-import Detail from "../pages/details/detail"
+import Detail from "../pages/details/detail";
 
 
 const Routes = () => {
