@@ -13,22 +13,17 @@ const Favorites=()=>{
   const [errorMessage, setErrorMessage] = useState('');
 
   const peoples=useSelector(state=>state.peoples);
+  const dispatch = useDispatch();
+
+  const like=(ID,IsFAVORITE)=>{
+    dispatch(changeFavorite(ID,IsFAVORITE));
+  };
 
   //this const getting from redux
   const favoritePeoples = peoples.filter(people =>{
-    if(people.isFavorite===true){
-      return people;
-    }
-    else{
-      return null;
-    }}
-  );
-  
-  const dispatch = useDispatch();
-
-  const like=(ID,ISFAVORITE)=>{  
-    dispatch(changeFavorite(ID,ISFAVORITE));
-  };
+    if(people.isFavorite===true) return people;
+    else return null;
+  });
 
   //*** define prev favorite peoples const ***//
   const prevFavRef = useRef();
@@ -52,7 +47,7 @@ const Favorites=()=>{
         setStart(true);
         setUsers(favoritePeoples);
       }else  /*when search result is null==> error: there is no result */
-        setErrorMessage('موردی یافت نشد');
+        setErrorMessage('there are no result to show');
     }
     if (prevFav && (prevFav.length > 0)) { /* when client click unFavorite of the card, we should set new users for display, this can get from new favorite peoples - users */
       if (!objectsAreSame(prevFav,favoritePeoples)){

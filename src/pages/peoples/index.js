@@ -9,14 +9,10 @@ const Peoples=()=>{
   const peoples=useSelector(state=>state.peoples);
   const dispatch = useDispatch();
 
-
-
-  const like=(ID,ISFAVORITE)=>{  
-    dispatch(changeFavorite(ID,ISFAVORITE));
-  };
   // tracking on which page we currently are
   const [page, setPage] = useState(0);
-  // add loader refrence 
+
+  // add loader reference
   const loader = useRef(null);
 
   useEffect(() => {
@@ -41,6 +37,10 @@ const Peoples=()=>{
     }
   }, [page]);
 
+  const like=(ID,IsFAVORITE)=>{
+    dispatch(changeFavorite(ID,IsFAVORITE));
+  };
+
   // here we handle what happens when user scrolls to Load More div
   // in this case we just update page variable
   const handleObserver = (entities) => {
@@ -49,7 +49,6 @@ const Peoples=()=>{
       setPage((page) => page + 1);
     }
   };
-
 
   return(
     <PageHOC>

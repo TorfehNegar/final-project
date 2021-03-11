@@ -12,6 +12,7 @@ function People() {
   useEffect(() => {
     fetchItem();
   }, []);
+  const peoples = useSelector(state => state.peoples);
 
   const fetchItem = async () => {
     const id = history.location.pathname.split("/")[2];
@@ -19,7 +20,6 @@ function People() {
     setItem(data);
   };
 
-  const peoples = useSelector(state => state.peoples);
   var fav;
   peoples.filter(people => {
     if (people.isFavorite === true) {

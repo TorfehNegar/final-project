@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const CardContent = ({people}) => {
   return (
     <div className="card-text">
-      <Link to={`people/${people.id}/`}>
+      <Link to={`people/${people.id}`}>
         <h3>{people.name}</h3>
       </Link>
       <p><b>gender: </b>{people.gender}</p>
