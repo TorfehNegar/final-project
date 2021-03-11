@@ -38,6 +38,13 @@ const Favorites=()=>{
   const prevFav = prevFavRef.current;
   /***/
 
+  //*** set component is mounted or not ***//
+  const unMounted=useRef(false);
+  useEffect(() => {
+    return ()=> {unMounted.current = true;};
+  },[]);
+  /***/
+
   useEffect(()=>{
     if (favoritePeoples.length===0) setErrorMessage('there is not favorite'); //when we have not any favorites.
     if (users.length===0 && favoritePeoples.length>0) { //when users is empty but favorite peoples are full
@@ -65,15 +72,18 @@ const Favorites=()=>{
     }
     return objectsAreSame;
   };
-  
+
   const filterArray=(input)=> { /* filtering name users with search input */
-    setLoading(false);
-    if (input === '') { /* if client erase all input values=> show all favorite peoples */
-      setUsers(favoritePeoples);
-      setErrorMessage('');
+    if (!unMounted.current) { /* if component is mounted then filter*/
+      setLoading(false);
+      if (input === '') { /* if client erase all input values=> show all favorite peoples */
+        setUsers(favoritePeoples);
+        setErrorMessage('');
+      }
+      else setUsers(users.filter(people => people.name.toLowerCase().includes(input)));
     }
-    else setUsers(users.filter(people => people.name.toLowerCase().includes(input)));
   };
+
   const debounce = (fn,delay) => {
     let inDebounce = null;
     return args => {
@@ -90,15 +100,19 @@ const Favorites=()=>{
     debouncedSave(input);
   };
 
+  const renderError=()=>{
+    return (
+      <div className='messageContainer'>
+        <div className='messageText'>
+          <p>{errorMessage}</p>
+        </div>
+      </div>
+    );
+  };
+
   return(
     <MainLayout>
-      {favoritePeoples.length===0?
-        <div className='messageContainer'>
-          <div className='messageText'>
-            <p>{errorMessage}</p>
-          </div> 
-        </div>
-        :
+      {favoritePeoples.length===0? renderError() :
         <div>
           <div className='search-bar'>
             <input className="search-input" type="text" placeholder="جستجو کنید..."
@@ -111,12 +125,8 @@ const Favorites=()=>{
             }
           </div>
           <div className='favoriteContainer'>
-            {errorMessage!=='' &&  /*when search result is null==> error: there is no result */
-            <div className='messageContainer'>
-              <div className='messageText'>
-                <p>{errorMessage}</p>
-              </div>
-            </div>}
+            {/*/*when search result is null==> error: there is no result */}
+            {errorMessage!=='' && renderError()}
             { users.map((people) =>
               <CardContainer
                 key={people.id}
