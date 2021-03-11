@@ -19,6 +19,21 @@ const Peoples=()=>{
   // add loader refrence 
   const loader = useRef(null);
 
+  useEffect(() => {
+    var options = {
+      root: null,
+      rootMargin: "20px",
+      threshold: 1.0
+    };
+    // initialize IntersectionObserver
+    // and attaching to Load More div
+    const observer = new IntersectionObserver(handleObserver, options);
+    if (loader.current) {
+      observer.observe(loader.current);
+    }
+
+  }, []);
+
   return(
     <MainLayout>
       <div className='peoplesContainer'>
