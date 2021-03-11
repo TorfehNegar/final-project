@@ -1,11 +1,10 @@
-/* eslint-disable */
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import "./style.scss"
 import MainLayout from "../../components/hos"
 import { useSelector } from "react-redux"
 import axios from "axios"
-//import axios from "axios"
+
 
 function Detail() {
   const history = useHistory()
