@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./style.scss";
-import MainLayout from "../../components/hos";
+import PageHOC from "../../components/PageHOC";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
 
-function Detail() {
+function People() {
   const history = useHistory();
   const [item, setItem] = useState([]);
   useEffect(() => {
@@ -33,7 +33,7 @@ function Detail() {
 
   return (
     <>
-      <MainLayout>
+      <PageHOC>
         <main>
           <p className="headName">{item.name}</p>
           <div className="d-detail-section">
@@ -48,15 +48,15 @@ function Detail() {
                   <li>Skin Color : {item.skin_color}</li>
                   <li>Eye color : {item.eye_color}</li>
                   <li>Gender : {item.gender}</li>
-                  <li>Vehicles : {item.vehicles}</li> 
+                  <li>Vehicles : {item.vehicles}</li>
                   <li className="fav">{fav}</li>
                 </ul>
               </span>
             </div>
           </div>
         </main>
-      </MainLayout>
+      </PageHOC>
     </>
   );
 }
-export default Detail;
+export default People;

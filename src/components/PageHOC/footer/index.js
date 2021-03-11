@@ -16,7 +16,6 @@ const Footer = () => {
       <div className="footer__copyright">
         <CopyRight/>
       </div>
-
     </div>
     
   );

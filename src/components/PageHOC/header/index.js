@@ -1,11 +1,11 @@
 /* eslint-disable */
 import React, { useState } from 'react';
 import "./header.scss";
-import TorfehNegarLogo from './Logo/index';
-import NavBar from './NavBar/index';
-import Favorite from './Favorite/index';
-import Name from './Name/index';
-import HamburgerMenu from './hamburger/index';
+import TorfehNegarLogo from './Logo';
+import NavBar from './NavBar';
+import Favorite from './Favorite';
+import GroupName from './groupName';
+import HamburgerMenu from './hamburger';
 import SideNav from './sideNav';
 
 const Header = () => {
@@ -25,7 +25,7 @@ const Header = () => {
                 <HamburgerMenu handleShow={handleShow}/>
                 <NavBar/>
                 <Favorite/>
-                <Name/>
+                <GroupName/>
             </div>
         </div>
     )

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import CardText from "./contentBox";
-import CardImage from "./imageBox/CardImage";
+import CardContent from "./cardContent";
+import CardImage from "./cardImage";
 import CardButton from "./cardButton";
 import PropTypes from 'prop-types';
 import "./cardStyles.scss";
@@ -10,14 +10,14 @@ const CardContainer = ({ people, like }) => {
   const [isOpen,setIsOpen]=useState(false);
   return (
     <div className="card-container">
-      <CardImage 
+      <CardImage
         isFavorite={people.isFavorite} 
         like={like} 
         id={people.id}
         setIsOpen={setIsOpen}
       />
 
-      <CardText 
+      <CardContent
         people={people} 
       />
       <CardButton 

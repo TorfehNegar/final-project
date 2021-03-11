@@ -5,7 +5,7 @@ import {ReactComponent as Instagram} from "../../../../assets/img/instagram.svg"
 import {ReactComponent as Telegram} from "../../../../assets/img/telegram.svg";
 import {ReactComponent as Youtube} from "../../../../assets/img/youtube.svg";
 
-const Socialmedia = () => {
+const SocialMedia = () => {
   return (
     <div className="footer__social__media">
       <a> <Facebook className="facebook"/> </a>
@@ -16,5 +16,5 @@ const Socialmedia = () => {
   );
 };
 
-export default Socialmedia;
+export default SocialMedia;
 

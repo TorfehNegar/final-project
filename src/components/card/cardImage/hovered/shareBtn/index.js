@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
+
 const ShareButton = ({setIsOpen}) => {
   return (
     <button className="action-button">

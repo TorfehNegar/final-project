@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
-import MainLayout from '../../components/hos';
-import CardContainer from '../../components/card/CardContainer';
+import PageHOC from '../../components/PageHOC';
+import Card from '../../components/card';
 import {changeFavorite, getAllPeoples} from '../../redux/people/action/fetchDataAction';
 import './peoples.scss';
-import Modal from '../../components/modal';
+
 const Peoples=()=>{
   const peoples=useSelector(state=>state.peoples);
   const dispatch = useDispatch();
@@ -52,17 +52,16 @@ const Peoples=()=>{
 
 
   return(
-    <MainLayout>
+    <PageHOC>
       <div className='peoplesContainer'>
         {peoples.map((people) =>
-          <CardContainer
+          <Card
             key={people.id} 
             people={people} 
             like={() => like(people.id, people.isFavorite)}
             isOpen={isOpen}
             setIsOpen={setIsOpen}
           />)}
-        <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>{/*<!-- Add Ref to Load More div -->*/}
       {
         page<=9 ? 
@@ -74,7 +73,7 @@ const Peoples=()=>{
           : 
           <></> 
       }
-    </MainLayout>
+    </PageHOC>
   );
 };
 export default Peoples;

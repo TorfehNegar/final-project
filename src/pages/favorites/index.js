@@ -1,8 +1,8 @@
 import React , {useState, useEffect, useCallback, useRef} from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import {changeFavorite} from '../../redux/people/action/fetchDataAction';
-import CardContainer from '../../components/card/CardContainer';
-import MainLayout from '../../components/hos';
+import Card from '../../components/card';
+import PageHOC from '../../components/PageHOC';
 import './favorites.scss';
 
 const Favorites=()=>{
@@ -108,7 +108,7 @@ const Favorites=()=>{
   };
 
   return(
-    <MainLayout>
+    <PageHOC>
       {favoritePeoples.length===0? renderError() :
         <div>
           <div className='search-bar'>
@@ -125,7 +125,7 @@ const Favorites=()=>{
             {/*/*when search result is null==> error: there is no result */}
             {errorMessage!=='' && renderError()}
             { users.map((people) =>
-              <CardContainer
+              <Card
                 key={people.id}
                 people={people}
                 like={()=>like(people.id,people.isFavorite)}
@@ -133,7 +133,7 @@ const Favorites=()=>{
           </div>
         </div>
       }
-    </MainLayout>
+    </PageHOC>
   );
 };
 export default Favorites;

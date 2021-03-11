@@ -2,10 +2,9 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import Header from "./header";
 import './hoc.scss';
+import Footer from "./footer/index";
 
-
-import Footer from "./Footer/index";
-const MainLayout = ({ children }) => {
+const PageHOC = ({ children }) => {
   return (
     <Fragment>
       <Header />
@@ -18,7 +17,7 @@ const MainLayout = ({ children }) => {
     </Fragment>
   );
 };
-MainLayout.propTypes = {
+PageHOC.propTypes = {
   children: PropTypes.any,
 };
-export default MainLayout;
+export default PageHOC;

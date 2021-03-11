@@ -1,7 +1,7 @@
 import React from "react";
-import FavoriteButton from "./favorite/FavoriteButton";
+import FavoriteButton from "./favoriteBtn";
 import PropTypes from 'prop-types';
-import ShareButton from "./share/ShareButton";
+import ShareButton from "./shareBtn";
 
 const CardActions = ({like, isFavorite, id ,setIsOpen}) => {
   return (
