@@ -9,13 +9,13 @@ const Peoples=()=>{
   const peoples=useSelector(state=>state.peoples);
   const dispatch = useDispatch();
 
-  const [isOpen,setIsOpen]=useState(false);
+
 
   const like=(ID,ISFAVORITE)=>{  
     dispatch(changeFavorite(ID,ISFAVORITE));
   };
   // tracking on which page we currently are
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(0);
   // add loader refrence 
   const loader = useRef(null);
 
@@ -27,16 +27,16 @@ const Peoples=()=>{
     };
     // initialize IntersectionObserver
     // and attaching to Load More div
-    const observer = new IntersectionObserver(handleObserver, options);
-    if (loader.current) {
+    if (loader.current && page === 0 ) {
+      const observer = new IntersectionObserver(handleObserver, options);
+
       observer.observe(loader.current);
     }
 
   }, []);
 
   useEffect(() => {
-    if (page <= 9) {
-    // here we simulate adding new posts to List
+    if (page <= 9 && peoples.length / 10 <= page) {
       dispatch(getAllPeoples(page));
     }
   }, [page]);
@@ -59,8 +59,6 @@ const Peoples=()=>{
             key={people.id} 
             people={people} 
             like={() => like(people.id, people.isFavorite)}
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
           />)}
       </div>{/*<!-- Add Ref to Load More div -->*/}
       {
