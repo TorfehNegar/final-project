@@ -1,8 +1,8 @@
-import React,{useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import MainLayout from '../../components/hos';
 import CardContainer from '../../components/card/CardContainer';
-import {changeFavorite} from '../../redux/people/action/fetchDataAction';
+import {changeFavorite, getAllPeoples} from '../../redux/people/action/fetchDataAction';
 import './peoples.scss';
 import Modal from '../../components/modal';
 const Peoples=()=>{
@@ -14,6 +14,42 @@ const Peoples=()=>{
   const like=(ID,ISFAVORITE)=>{  
     dispatch(changeFavorite(ID,ISFAVORITE));
   };
+  // tracking on which page we currently are
+  const [page, setPage] = useState(2);
+  // add loader refrence 
+  const loader = useRef(null);
+
+  useEffect(() => {
+    var options = {
+      root: null,
+      rootMargin: "20px",
+      threshold: 1.0
+    };
+    // initialize IntersectionObserver
+    // and attaching to Load More div
+    const observer = new IntersectionObserver(handleObserver, options);
+    if (loader.current) {
+      observer.observe(loader.current);
+    }
+
+  }, []);
+
+  useEffect(() => {
+    if (page <= 9) {
+    // here we simulate adding new posts to List
+      dispatch(getAllPeoples(page));
+    }
+  }, [page]);
+
+  // here we handle what happens when user scrolls to Load More div
+  // in this case we just update page variable
+  const handleObserver = (entities) => {
+    const target = entities[0];
+    if (target.isIntersecting) {   
+      setPage((page) => page + 1);
+    }
+  };
+
 
   return(
     <MainLayout>
@@ -27,7 +63,17 @@ const Peoples=()=>{
             setIsOpen={setIsOpen}
           />)}
         <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
-      </div>
+      </div>{/*<!-- Add Ref to Load More div -->*/}
+      {
+        page<=9 ? 
+          <div 
+            className="loading" 
+            ref={loader}>
+            <h2>Load More</h2>
+          </div> 
+          : 
+          <></> 
+      }
     </MainLayout>
   );
 };

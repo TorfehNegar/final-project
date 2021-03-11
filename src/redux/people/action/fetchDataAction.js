@@ -1,8 +1,8 @@
 import {getPaginationPeoples} from "../../../utils/Api/service/index";
 import {CHANGE_FAVORITE, GET_PAGINATION_PEOPLES} from "../types/type";
-export const getAllPeoples = () => {
+export const getAllPeoples = (nextPage) => {
   return async (dispatch) => {
-    const { data } = await getPaginationPeoples();
+    const { data } = await getPaginationPeoples(nextPage);
       
     await dispatch({ type: GET_PAGINATION_PEOPLES, payload: data.results });
   };

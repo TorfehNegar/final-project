@@ -11,7 +11,7 @@ export const store = createStore(
   )
 );
 
-store.dispatch(getAllPeoples());
+store.dispatch(getAllPeoples(1));
 
 
 
