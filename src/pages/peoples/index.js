@@ -34,6 +34,23 @@ const Peoples=()=>{
 
   }, []);
 
+  useEffect(() => {
+    if (page <= 9) {
+    // here we simulate adding new posts to List
+      dispatch(getAllPeoples(page));
+    }
+  }, [page]);
+
+  // here we handle what happens when user scrolls to Load More div
+  // in this case we just update page variable
+  const handleObserver = (entities) => {
+    const target = entities[0];
+    if (target.isIntersecting) {   
+      setPage((page) => page + 1);
+    }
+  };
+
+
   return(
     <MainLayout>
       <div className='peoplesContainer'>
