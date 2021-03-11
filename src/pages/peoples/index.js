@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import MainLayout from '../../components/hos';
 import CardContainer from '../../components/card/CardContainer';
-import {changeFavorite} from '../../redux/people/action/fetchDataAction';
+import {changeFavorite, getAllPeoples} from '../../redux/people/action/fetchDataAction';
 import './peoples.scss';
 import Modal from '../../components/modal';
 const Peoples=()=>{
@@ -63,9 +63,8 @@ const Peoples=()=>{
             setIsOpen={setIsOpen}
           />)}
         <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
-      </div>
-       {/*<!-- Add Ref to Load More div -->*/}
-       {
+      </div>{/*<!-- Add Ref to Load More div -->*/}
+      {
         page<=9 ? 
           <div 
             className="loading" 
