@@ -1,0 +1,63 @@
+$background-color: #cfcfcf;
+$color: #fff;
+
+@media only screen and (min-width : 320px) {
+    .fooeter {
+        width: 90%;
+        background-color: $background-color;
+        margin: {
+            top: 0px;
+            bottom: 0px;
+            right: auto;
+            left: auto;
+        }
+        display: grid;
+        grid-template-columns: 5fr;
+        padding: {
+            top: 1rem;
+            right: 1.5rem;
+            bottom: .5rem;
+            left: .5rem;
+        };   
+    }
+    
+    .footer__copyright {
+        background-color: #b8b8b8;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 3rem;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width : 769px) {
+    .fooeter {
+        width: 90%;
+        background-color: $background-color;
+        margin: {
+            top: 0px;
+            bottom: 0px;
+            right: auto;
+            left: auto;
+        }
+        display: grid;
+        grid-template-columns: 2fr 5fr 2fr;
+        padding: {
+            top: 1rem;
+            right: 1.5rem;
+            bottom: .5rem;
+            left: .5rem;
+        };
+            
+    }
+    
+    .footer__copyright {
+        background-color: #b8b8b8;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 4fr;
+        height: 3rem;
+        margin: 0 auto;
+    }
+}
